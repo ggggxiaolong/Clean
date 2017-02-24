@@ -1,0 +1,93 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "25.0.2"
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 25
+    androidCompileSdkVersion = 24
+
+    //Libraries
+    daggerVersion = '2.10-rc1'
+    butterKnifeVersion = '8.5.1'
+    recyclerViewVersion = '25.2.0'
+    rxJavaVersion = '2.0.6'
+    RxAndroidVersion = '2.0.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.8.0'
+    okHttp3Veriosn = '3.6.0'
+    androidAnnotationVersion = '25.2.0'
+    arrowVersion = '1.0.0'
+
+    //Testing
+    roboletricVersion = '3.1.1'
+    jUnitVersion = '4.12'
+    assertVsersion = '1.7.1'
+    mockitoVersion = '1.9.5'
+    dexMakerVersion = '1.0'
+    espressoVersion = '2.0'
+    testingSupportLibVersion = '0.1'
+
+    //Development
+    leakCanaryVersion = '1.3.1'
+
+    presentationDependencies = [
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            butterKnife        : "com.jekewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            recycleView        : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaAnnotation     : "javax,annotaion:jsr250-api:${javaxAnnotationVersion}",
+    ]
+
+    presentationTestDependencies = [
+            mokito           : "org.mockito:mockito-core:${mockitoVersion}",
+            dexmaker         : "com.google.dexmaker:dexmaker:${dexMakerVersion}",
+            dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
+    ]
+
+    domainDependences = [
+            javaAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject   : "javax,inject:javax.inject:${javaxInjectVersion}",
+            rxJava        : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            arrow         : "com.fernandocejas:arrow:${arrowVersion}",
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            mockito: "com.mockito:mockito-core:${mockitoVersion}",
+            assertj: "org.assertj:assertj-core:${assertJVersion}"
+    ]
+
+    dataDependencies = [
+            daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger            : "com.google.dagger:dagger:${daggerVersion}",
+            okhttp            : "com.squreup.okhttp:okhttp3:${okHttp3Veriosn}",
+            gson              : "com.google.gson:gson:${gsonVersion}",
+            rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
+    ]
+
+    dataTestDependencies = [
+            junit     : "junit:junit:${jUnitVersion}",
+            assertj   : "org.assertj:assertj-core:${assertJVersion}",
+            mockito   : "org.mockito:mokito-core:${mockitoVersion}",
+            robolectic: "org.rebolectic:${roboletricVersion}",
+    ]
+
+    develepmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+    ]
+}
