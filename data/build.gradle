@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
     dependencies {
         classpath 'me.tatarka:gradle-retrolambda:3.5.0'
@@ -24,11 +24,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
-        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    packagingOptions{
+    packagingOptions {
         exclude "LICENSE.txt"
         exclude "META-INF/DEPENDENCIES"
         exclude "META-INF/ASL2.0"
@@ -52,6 +52,7 @@ dependencies {
     def testDependencies = rootProject.ext.dataTestDependencies
 
     compile project(':domain')
+    annotationProcessor dataDependencies.immutabels
     compile dataDependencies.javaxInject
     provided dataDependencies.javaxAnnotation
     compile dataDependencies.okhttp
@@ -59,6 +60,7 @@ dependencies {
     compile dataDependencies.rxJava
     compile dataDependencies.rxAndroid
     compile dataDependencies.androidAnnotations
+    provided dataDependencies.immutabels
 
     testCompile testDependencies.junit
     testCompile testDependencies.assertj
