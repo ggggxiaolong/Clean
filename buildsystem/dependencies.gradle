@@ -44,7 +44,6 @@ ext {
             recycleView        : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
             rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            javaxAnnotation    : "javax.annotaion:jsr250-api:${javaxAnnotationVersion}",
     ]
 
     presentationTestDependencies = [
@@ -75,7 +74,6 @@ ext {
             gson              : "com.google.code.gson:gson:${gsonVersion}",
             rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
     ]

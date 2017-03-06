@@ -24,8 +24,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
-        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     packagingOptions{
@@ -53,7 +53,6 @@ dependencies {
 
     compile project(':domain')
     compile dataDependencies.javaxInject
-    provided dataDependencies.javaxAnnotation
     compile dataDependencies.okhttp
     compile dataDependencies.gson
     compile dataDependencies.rxJava

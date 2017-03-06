@@ -71,8 +71,6 @@ dependencies {
 
     annotationProcessor presentationDependencies.daggerCompiler
     annotationProcessor presentationDependencies.butterKnifeCompiler
-    annotationProcessor presentationDependencies.javaxAnnotation
-
 
     compile presentationDependencies.dagger
     compile presentationDependencies.butterKnife
