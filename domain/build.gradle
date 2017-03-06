@@ -19,6 +19,7 @@ dependencies {
 
     provided domainDependencies.javaxAnnotation
 
+    compile domainDependencies.immutables
     compile domainDependencies.javaxInject
     compile domainDependencies.rxJava
     compile domainDependencies.arrow
