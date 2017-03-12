@@ -17,7 +17,6 @@ ext {
     recyclerViewVersion = '25.2.0'
     rxJavaVersion = '2.0.6'
     rxAndroidVersion = '2.0.1'
-    javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
     gsonVersion = '2.8.0'
     okHttp3Veriosn = '3.6.0'
@@ -45,7 +44,6 @@ ext {
             recycleView        : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
             rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            javaxAnnotation    : "javax.annotaion:jsr250-api:${javaxAnnotationVersion}",
     ]
 
     presentationTestDependencies = [
@@ -57,11 +55,10 @@ ext {
     ]
 
     domainDependences = [
-            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
             rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             arrow          : "com.fernandocejas:arrow:${arrowVersion}",
-            immutabels     : "org.immutables:value:${immutablesVersion}",
+            immutables     : "org.immutables:value:${immutablesVersion}",
     ]
 
     domainTestDependencies = [
@@ -77,10 +74,9 @@ ext {
             gson              : "com.google.code.gson:gson:${gsonVersion}",
             rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
-            immutabels        : "org.immutables:value:${immutablesVersion}",
+            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            immutables        : "org.immutables:value:${immutablesVersion}",
     ]
 
     dataTestDependencies = [
