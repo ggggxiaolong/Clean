@@ -1,6 +1,5 @@
-package com.example.data;
+package com.example.mrtan.data;
 
-import org.junit.Test;
 
 /**
  * Instrumentation test, which will execute on an Android device.
@@ -8,7 +7,4 @@ import org.junit.Test;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() throws Exception {
-    }
 }
