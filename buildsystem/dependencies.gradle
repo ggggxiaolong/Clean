@@ -17,12 +17,12 @@ ext {
     recyclerViewVersion = '25.2.0'
     rxJavaVersion = '2.0.6'
     rxAndroidVersion = '2.0.1'
-    javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
     gsonVersion = '2.8.0'
     okHttp3Veriosn = '3.6.0'
     androidAnnotationVersion = '25.2.0'
     arrowVersion = '1.0.0'
+    immutablesVersion = '2.4.3'
 
     //Testing
     roboletricVersion = '3.1.1'
@@ -47,7 +47,7 @@ ext {
     ]
 
     presentationTestDependencies = [
-            mockito           : "org.mockito:mockito-core:${mockitoVersion}",
+            mockito          : "org.mockito:mockito-core:${mockitoVersion}",
             dexmaker         : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
             dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
             espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
@@ -55,10 +55,10 @@ ext {
     ]
 
     domainDependences = [
-            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
             rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             arrow          : "com.fernandocejas:arrow:${arrowVersion}",
+            immutables     : "org.immutables:value:${immutablesVersion}",
     ]
 
     domainTestDependencies = [
@@ -74,8 +74,9 @@ ext {
             gson              : "com.google.code.gson:gson:${gsonVersion}",
             rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
+            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            immutables        : "org.immutables:value:${immutablesVersion}",
     ]
 
     dataTestDependencies = [
