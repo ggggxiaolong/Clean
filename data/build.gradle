@@ -52,15 +52,14 @@ dependencies {
     def testDependencies = rootProject.ext.dataTestDependencies
 
     compile project(':domain')
-    annotationProcessor dataDependencies.immutabels
+    annotationProcessor dataDependencies.immutables
     compile dataDependencies.javaxInject
-    provided dataDependencies.javaxAnnotation
     compile dataDependencies.okhttp
     compile dataDependencies.gson
     compile dataDependencies.rxJava
     compile dataDependencies.rxAndroid
     compile dataDependencies.androidAnnotations
-    provided dataDependencies.immutabels
+    provided dataDependencies.immutables
 
     testCompile testDependencies.junit
     testCompile testDependencies.assertj
