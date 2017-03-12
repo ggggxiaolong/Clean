@@ -4,11 +4,11 @@ package com.example.mrtan.domain.exception;
  * @author mrtan 17-3-12
  */
 
-public class DefaultError implements ErrorBundle {
+public class DefaultErrorBundle implements ErrorBundle {
   final Exception mException;
   public static final String DEFAULT_ERROR_MSG = "Unknown error";
 
-  public DefaultError(Exception exception) {
+  public DefaultErrorBundle(Exception exception) {
     mException = exception;
   }
 
@@ -17,6 +17,6 @@ public class DefaultError implements ErrorBundle {
   }
 
   @Override public String errorMessage() {
-    return DEFAULT_ERROR_MSG;
+    return (mException != null) ? mException.getMessage() : DEFAULT_ERROR_MSG;
   }
 }
