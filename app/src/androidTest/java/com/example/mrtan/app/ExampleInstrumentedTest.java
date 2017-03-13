@@ -1,4 +1,4 @@
-package com.example.mrtan.clean;
+package com.example.mrtan.app;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
