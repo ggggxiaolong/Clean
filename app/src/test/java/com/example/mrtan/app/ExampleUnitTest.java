@@ -1,4 +1,4 @@
-package com.example.mrtan.clean;
+package com.example.mrtan.app;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
