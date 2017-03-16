@@ -50,8 +50,7 @@ android {
 dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
     def testDependencies = rootProject.ext.dataTestDependencies
-
-    compile project(':domain')
+//    compile project(':domain')
     annotationProcessor dataDependencies.immutables
     compile dataDependencies.javaxInject
     compile dataDependencies.okhttp
@@ -60,9 +59,10 @@ dependencies {
     compile dataDependencies.rxAndroid
     compile dataDependencies.androidAnnotations
     provided dataDependencies.immutables
-
+    provided dataDependencies.immutablesGson
     testCompile testDependencies.junit
     testCompile testDependencies.assertj
     testCompile testDependencies.mockito
     testCompile testDependencies.robolectric
+    compile files('libs/domain.jar')
 }

@@ -22,13 +22,13 @@ ext {
     okHttp3Veriosn = '3.6.0'
     androidAnnotationVersion = '25.2.0'
     arrowVersion = '1.0.0'
-    immutablesVersion = '2.4.3'
+    immutablesVersion = '2.4.4'
 
     //Testing
-    roboletricVersion = '3.1.1'
+    roboletricVersion = '3.3.1'
     jUnitVersion = '4.12'
     assertJVersion = '1.7.1'
-    mockitoVersion = '2.7.11'
+    mockitoVersion = '2.7.17'
     dexmakerVersion = '1.0'
     espressoVersion = '2.0'
     testingSupportLibVersion = '0.1'
@@ -77,6 +77,7 @@ ext {
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
             javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
             immutables        : "org.immutables:value:${immutablesVersion}",
+            immutablesGson        : "org.immutables:gson:${immutablesVersion}",
     ]
 
     dataTestDependencies = [
