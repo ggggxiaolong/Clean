@@ -1,92 +1,84 @@
 allprojects {
-    repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-    }
+  repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+  }
 }
 
 ext {
-    //Android
-    androidBuildToolsVersion = "25.0.2"
-    androidMinSdkVersion = 15
-    androidTargetSdkVersion = 25
-    androidCompileSdkVersion = 25
+  //Android
+  androidBuildToolsVersion = "25.0.2"
+  androidMinSdkVersion = 15
+  androidTargetSdkVersion = 25
+  androidCompileSdkVersion = 25
 
-    //Libraries
-    daggerVersion = '2.9'
-    butterKnifeVersion = '8.5.1'
-    recyclerViewVersion = '25.2.0'
-    rxJavaVersion = '2.0.6'
-    rxAndroidVersion = '2.0.1'
-    javaxInjectVersion = '1'
-    gsonVersion = '2.8.0'
-    okHttp3Veriosn = '3.6.0'
-    androidAnnotationVersion = '25.2.0'
-    arrowVersion = '1.0.0'
-    immutablesVersion = '2.4.3'
+  //Libraries
+  daggerVersion = '2.9'
+  butterKnifeVersion = '8.5.1'
+  recyclerViewVersion = '25.2.0'
+  rxJavaVersion = '2.0.6'
+  rxAndroidVersion = '2.0.1'
+  javaxInjectVersion = '1'
+  gsonVersion = '2.8.0'
+  retrofit2Version = '2.2.0'
+  okHttp3Veriosn = '3.6.0'
+  androidAnnotationVersion = '25.2.0'
+  arrowVersion = '1.0.0'
+  immutablesVersion = '2.4.4'
 
-    //Testing
-    roboletricVersion = '3.1.1'
-    jUnitVersion = '4.12'
-    assertJVersion = '1.7.1'
-    mockitoVersion = '2.7.11'
-    dexmakerVersion = '1.0'
-    espressoVersion = '2.0'
-    testingSupportLibVersion = '0.1'
+  //Testing
+  roboletricVersion = '3.3.1'
+  jUnitVersion = '4.12'
+  assertJVersion = '1.7.1'
+  mockitoVersion = '2.7.17'
+  dexmakerVersion = '1.0'
+  espressoVersion = '2.0'
+  testingSupportLibVersion = '0.1'
 
-    //Development
-    leakCanaryVersion = '1.3.1'
+  //Development
+  leakCanaryVersion = '1.3.1'
 
-    presentationDependencies = [
-            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
-            dagger             : "com.google.dagger:dagger:${daggerVersion}",
-            butterKnife        : "com.jakewharton:butterknife:${butterKnifeVersion}",
-            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
-            recycleView        : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
-            rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-    ]
+  presentationDependencies = [daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                              dagger             : "com.google.dagger:dagger:${daggerVersion}",
+                              butterKnife        : "com.jakewharton:butterknife:${butterKnifeVersion}",
+                              butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+                              recycleView        : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+                              rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                              rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",]
 
-    presentationTestDependencies = [
-            mockito          : "org.mockito:mockito-core:${mockitoVersion}",
-            dexmaker         : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
-            dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
-            espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
-            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
-    ]
+  presentationTestDependencies = [mockito          : "org.mockito:mockito-core:${mockitoVersion}",
+                                  dexmaker         : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+                                  dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+                                  espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+                                  testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",]
 
-    domainDependences = [
-            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
-            rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-            arrow          : "com.fernandocejas:arrow:${arrowVersion}",
-            immutables     : "org.immutables:value:${immutablesVersion}",
-    ]
+  domainDependences = [javaxInject: "javax.inject:javax.inject:${javaxInjectVersion}",
+                       rxJava     : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                       arrow      : "com.fernandocejas:arrow:${arrowVersion}",
+                       immutables : "org.immutables:value:${immutablesVersion}",]
 
-    domainTestDependencies = [
-            junit  : "junit:junit:${jUnitVersion}",
-            mockito: "org.mockito:mockito-core:${mockitoVersion}",
-            assertj: "org.assertj:assertj-core:${assertJVersion}",
-    ]
+  domainTestDependencies = [junit  : "junit:junit:${jUnitVersion}",
+                            mockito: "org.mockito:mockito-core:${mockitoVersion}",
+                            assertj: "org.assertj:assertj-core:${assertJVersion}",]
 
-    dataDependencies = [
-            daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
-            dagger            : "com.google.dagger:dagger:${daggerVersion}",
-            okhttp            : "com.squareup.okhttp3:okhttp:${okHttp3Veriosn}",
-            gson              : "com.google.code.gson:gson:${gsonVersion}",
-            rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
-            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
-            immutables        : "org.immutables:value:${immutablesVersion}",
-    ]
+  dataDependencies = [daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                      dagger            : "com.google.dagger:dagger:${daggerVersion}",
+                      retrofit2         : "com.squareup.retrofit2:retrofit:${retrofit2Version}",
+                      retrofit2Gson     : "com.squareup.retrofit2:converter-gson:${retrofit2Version}",
+                      retrofit2Rxjava   : "com.squareup.retrofit2:adapter-rxjava2:${retrofit2Version}",
+                      okhttp            : "com.squareup.okhttp3:okhttp:${okHttp3Veriosn}",
+                      gson              : "com.google.code.gson:gson:${gsonVersion}",
+                      rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                      rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationVersion}",
+                      javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+                      immutables        : "org.immutables:value:${immutablesVersion}",
+                      immutablesGson    : "org.immutables:gson:${immutablesVersion}",]
 
-    dataTestDependencies = [
-            junit      : "junit:junit:${jUnitVersion}",
-            assertj    : "org.assertj:assertj-core:${assertJVersion}",
-            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
-            robolectric: "org.robolectric:robolectric:${roboletricVersion}",
-    ]
+  dataTestDependencies = [junit      : "junit:junit:${jUnitVersion}",
+                          assertj    : "org.assertj:assertj-core:${assertJVersion}",
+                          mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+                          robolectric: "org.robolectric:robolectric:${roboletricVersion}",]
 
-    developmentDependencies = [
-            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
-    ]
+  developmentDependencies =
+      [leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",]
 }

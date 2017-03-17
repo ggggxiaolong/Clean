@@ -1,68 +1,75 @@
 buildscript {
-    repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-    }
-    dependencies {
-        classpath 'me.tatarka:gradle-retrolambda:3.5.0'
-    }
+  repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+  }
+  dependencies {
+    classpath 'me.tatarka:gradle-retrolambda:3.5.0'
+  }
 }
 apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    defaultPublishConfig "debug"
+  defaultPublishConfig "debug"
 
-    def globalConfiguration = rootProject.extensions.getByName("ext")
+  def globalConfiguration = rootProject.extensions.getByName("ext")
 
-    compileSdkVersion globalConfiguration.androidCompileSdkVersion
-    buildToolsVersion globalConfiguration.androidBuildToolsVersion
+  compileSdkVersion globalConfiguration.androidCompileSdkVersion
+  buildToolsVersion globalConfiguration.androidBuildToolsVersion
 
-    defaultConfig {
-        minSdkVersion globalConfiguration.androidMinSdkVersion
-        targetSdkVersion globalConfiguration.androidTargetSdkVersion
-        versionCode globalConfiguration.androidVersionCode
-    }
+  defaultConfig {
+    minSdkVersion globalConfiguration.androidMinSdkVersion
+    targetSdkVersion globalConfiguration.androidTargetSdkVersion
+    versionCode globalConfiguration.androidVersionCode
+  }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 
-    packagingOptions {
-        exclude "LICENSE.txt"
-        exclude "META-INF/DEPENDENCIES"
-        exclude "META-INF/ASL2.0"
-        exclude "META-INF/NOTICE"
-        exclude "META-INF/LICENSE"
-    }
+  productFlavors {
+    mock {}
+    prod {}
+  }
 
-    lintOptions {
-        lintConfig file('lint.xml')
-//        quiet true
-//        abortOnError false
-//        ignoreWarnings true
-//        disable 'InvalidPackage'
-//        disable "OldTargetApi"
-    }
-    buildToolsVersion '25.0.2'
+  packagingOptions {
+    exclude "LICENSE.txt"
+    exclude "META-INF/DEPENDENCIES"
+    exclude "META-INF/ASL2.0"
+    exclude "META-INF/NOTICE"
+    exclude "META-INF/LICENSE"
+  }
+
+  lintOptions {
+    lintConfig file('lint.xml')
+    abortOnError false
+  }
+  buildToolsVersion '25.0.2'
 }
 
 dependencies {
-    def dataDependencies = rootProject.ext.dataDependencies
-    def testDependencies = rootProject.ext.dataTestDependencies
+  def dataDependencies = rootProject.ext.dataDependencies
+  def testDependencies = rootProject.ext.dataTestDependencies
 
-    compile project(':domain')
-    annotationProcessor dataDependencies.immutables
-    compile dataDependencies.javaxInject
-    compile dataDependencies.okhttp
-    compile dataDependencies.gson
-    compile dataDependencies.rxJava
-    compile dataDependencies.rxAndroid
-    compile dataDependencies.androidAnnotations
-    provided dataDependencies.immutables
+  compile project(':domain')
+  annotationProcessor presentationDependencies.daggerCompiler
+  annotationProcessor dataDependencies.immutables
 
-    testCompile testDependencies.junit
-    testCompile testDependencies.assertj
-    testCompile testDependencies.mockito
-    testCompile testDependencies.robolectric
+  compile dataDependencies.dagger
+  compile dataDependencies.javaxInject
+  compile dataDependencies.retrofit2
+  compile dataDependencies.retrofit2Rxjava
+  compile dataDependencies.retrofit2Gson
+  compile dataDependencies.okhttp
+  compile dataDependencies.gson
+  compile dataDependencies.rxJava
+  compile dataDependencies.rxAndroid
+  compile dataDependencies.androidAnnotations
+  provided dataDependencies.immutables
+  provided dataDependencies.immutablesGson
+  testCompile testDependencies.junit
+  testCompile testDependencies.assertj
+  testCompile testDependencies.mockito
+  testCompile testDependencies.robolectric
 }

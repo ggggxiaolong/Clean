@@ -11,7 +11,7 @@ buildscript {
 
 allprojects {
     ext {
-        androidApplicationId = "com.example.mrtan.clean.app"
+        androidApplicationId = "com.example.mrtan.app"
         androidVersionCode = 1
         androidVersionName = '1.0'
         testInstrumentationRunner = 'android.support.test.runner.AndroidJUnitRunner'
