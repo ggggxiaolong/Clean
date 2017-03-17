@@ -24,7 +24,7 @@ import static org.mockito.BDDMockito.given;
   @Mock private ThreadExecutor mThreadExecutor;
   @Mock private PostExecutorThread mPostExecutorThread;
 
-  @Rule private ExpectedException mException = ExpectedException.none();
+  @Rule public ExpectedException mException = ExpectedException.none();
 
   private TestUserCase mTestUserCase;
   private TestDisposable mTestDisposable;

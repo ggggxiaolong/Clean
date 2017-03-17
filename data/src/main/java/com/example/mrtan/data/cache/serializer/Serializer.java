@@ -3,8 +3,6 @@ package com.example.mrtan.data.cache.serializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
 import java.util.ServiceLoader;
 import javax.inject.Inject;
 import javax.inject.Singleton;
