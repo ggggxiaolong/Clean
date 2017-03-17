@@ -11,3 +11,4 @@ commit ae30300e1c2b1edbb096ad42ae66fc34c4979bb1
 ### what I changed
 * update libs version
 * fix okhttp lint abortOnError
+* add api response unit test
