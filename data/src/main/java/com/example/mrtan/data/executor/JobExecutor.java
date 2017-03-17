@@ -1,5 +1,6 @@
 package com.example.mrtan.data.executor;
 
+import android.support.annotation.NonNull;
 import com.example.mrtan.domain.executor.ThreadExecutor;
 
 /**
@@ -7,4 +8,8 @@ import com.example.mrtan.domain.executor.ThreadExecutor;
  */
 
 public class JobExecutor implements ThreadExecutor {
+
+  @Override public void execute(@NonNull Runnable command) {
+    ExecutorManager.eventExecutor.execute(command);
+  }
 }

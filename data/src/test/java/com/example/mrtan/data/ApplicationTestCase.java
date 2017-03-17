@@ -15,7 +15,7 @@ import org.robolectric.annotation.Config;
  */
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, application = ApplicationSub.class, sdk = 21)
-public class ApplicationTestCase {
+public abstract class ApplicationTestCase {
 
   @Rule public TestRule injectMockRule = (base, description) -> {
     MockitoAnnotations.initMocks(ApplicationTestCase.this);

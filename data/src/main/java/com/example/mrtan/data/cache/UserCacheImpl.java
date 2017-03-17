@@ -12,7 +12,8 @@ import javax.inject.Singleton;
 /**
  * @author mrtan on 17-3-16.
  */
-@Singleton public class UserCacheImpl implements UserCache {
+@Singleton
+public class UserCacheImpl implements UserCache {
   static final String SETTING_FILE_NAME = "com.example.mrtan.settings";
   static final String SETTING_KEY_CACHE_UPDATE = "last_cache_update";
   static final String DEFAULT_FILE_NAME = "user_";
@@ -22,7 +23,8 @@ import javax.inject.Singleton;
   final File mCacheDir;
   final Serializer mSerializer;
 
-  @Inject public UserCacheImpl(Context context, Serializer serializer) {
+  @Inject
+  public UserCacheImpl(Context context, Serializer serializer) {
     if (context == null) {
       throw new IllegalArgumentException("params can't be null");
     }
