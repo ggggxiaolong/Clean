@@ -79,6 +79,8 @@ dependencies {
   compile presentationDependencies.rxJava
   compile presentationDependencies.rxAndroid
   compile presentationDependencies.arrow
+  compile presentationDependencies.stream
+  compile presentationDependencies.glide
 
   compile 'com.android.support:appcompat-v7:25.2.0'
   compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'

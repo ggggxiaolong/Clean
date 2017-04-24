@@ -7,6 +7,7 @@ import com.example.mrtan.domain.repository.UserRepository;
 import com.fernandocejas.arrow.checks.Preconditions;
 import io.reactivex.Observable;
 import org.immutables.value.Value;
+import javax.inject.Inject;
 
 /**
  * @author mrtan 17-3-12
@@ -16,7 +17,7 @@ public class GetUserDetails extends UserCase<User, GetUserDetails.Params> {
 
   final UserRepository mUserRepository;
 
-  public GetUserDetails(ThreadExecutor threadExecutor, PostExecutorThread postExecutorThread,
+  @Inject public GetUserDetails(ThreadExecutor threadExecutor, PostExecutorThread postExecutorThread,
       UserRepository userRepository) {
     super(threadExecutor, postExecutorThread);
     mUserRepository = userRepository;
@@ -27,7 +28,7 @@ public class GetUserDetails extends UserCase<User, GetUserDetails.Params> {
     return mUserRepository.user(params.userId());
   }
 
-  @Value.Immutable public static abstract class Params {
-    @Value.Parameter public abstract int userId();
+  public interface Params {
+    int userId();
   }
 }

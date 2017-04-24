@@ -1,6 +1,4 @@
-package com.example.mrtan.app.view;
-
-import android.content.Context;
+package com.example.mrtan.app.view.base;
 
 /**
  * @author mrtan 17-3-25
@@ -17,6 +15,4 @@ public interface LoadDataView {
   void hideRetry();
 
   void showError(String message);
-
-  Context context();
 }

@@ -1,6 +1,9 @@
 package com.example.mrtan.app;
 
 import android.app.Application;
+import com.example.mrtan.app.internal.di.components.ApplicationComponent;
+import com.example.mrtan.app.internal.di.components.DaggerApplicationComponent;
+import com.example.mrtan.app.internal.di.modules.ApplicationModule;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
@@ -9,6 +12,8 @@ import com.squareup.leakcanary.LeakCanary;
 
 public class App extends Application {
 
+  ApplicationComponent mComponent;
+
   @Override public void onCreate() {
     super.onCreate();
     initializeInjector();
@@ -16,12 +21,17 @@ public class App extends Application {
   }
 
   private void initializeInjector() {
-    // TODO: 17-3-18 dagger inject
+    mComponent =
+        DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this)).build();
   }
 
   private void initializeLeakDetection() {
-    if (BuildConfig.DEBUG){
+    if (BuildConfig.DEBUG) {
       LeakCanary.install(this);
     }
+  }
+
+  public ApplicationComponent getComponent(){
+    return mComponent;
   }
 }

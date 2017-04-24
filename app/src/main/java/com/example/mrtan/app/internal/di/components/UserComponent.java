@@ -3,6 +3,7 @@ package com.example.mrtan.app.internal.di.components;
 import com.example.mrtan.app.internal.di.ScopeActivity;
 import com.example.mrtan.app.internal.di.modules.ActivityModule;
 import com.example.mrtan.app.internal.di.modules.UserModule;
+import com.example.mrtan.app.view.userlist.UserListFragment;
 import dagger.Component;
 
 /**
@@ -11,6 +12,5 @@ import dagger.Component;
 @ScopeActivity @Component(dependencies = ApplicationComponent.class, modules = {
     ActivityModule.class, UserModule.class
 }) public interface UserComponent {
-  //void inject();
-  // TODO: 17-3-25 not finish
+  void inject(UserListFragment userListFragment);
 }
