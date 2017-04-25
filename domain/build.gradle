@@ -13,7 +13,7 @@ sourceSets {
 }
 
 dependencies {
-    def domainDependencies = rootProject.ext.domainDependences
+    def domainDependencies = rootProject.ext.domainDependencies
     def domainTestDependencies = rootProject.ext.domainTestDependencies
 
     compile domainDependencies.javaxInject

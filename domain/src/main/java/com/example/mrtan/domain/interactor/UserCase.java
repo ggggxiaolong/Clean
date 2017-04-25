@@ -40,7 +40,7 @@ public abstract class UserCase<T, Params> {
     }
   }
 
-  public void addDisposable(Disposable disposable){
+  void addDisposable(Disposable disposable){
     Preconditions.checkNotNull(mDisposable);
     Preconditions.checkNotNull(disposable);
     mDisposable.add(disposable);

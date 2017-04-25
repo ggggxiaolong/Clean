@@ -12,6 +12,8 @@ import java.util.List;
  */
 public class UserEntityDataMapper {
 
+  private UserEntityDataMapper(){}
+
   public static User transform(UserEntity userEntity) {
     User user = null;
     if (userEntity != null) {

@@ -23,15 +23,13 @@ public class UserEntityDataMapperTest {
   static final int FAKE_USER_ID = 123;
   static final int FAKE_FOLLOWERS = 10;
   static final String FAKE_FULLNAME = "mrtan";
-  private UserEntityDataMapper mUserEntityDataMapper;
 
   @Before public void setUp(){
-    mUserEntityDataMapper = new UserEntityDataMapper();
   }
 
   @Test public void testTransformEntity(){
     UserEntity userEntity = createUserEntity();
-    User user = mUserEntityDataMapper.transform(userEntity);
+    User user = UserEntityDataMapper.transform(userEntity);
 
     assertThat(user, is(instanceOf(User.class)));
     assertThat(user.userId(), is(FAKE_USER_ID));
@@ -45,7 +43,7 @@ public class UserEntityDataMapperTest {
     ArrayList<UserEntity> origin = new ArrayList<>();
     origin.add(mock1);
     origin.add(mock2);
-    List<User> users = mUserEntityDataMapper.transform(origin);
+    List<User> users = UserEntityDataMapper.transform(origin);
     assertThat(users.size(), is(2));
     assertThat(users.get(0), is(instanceOf(User.class)));
     assertThat(users.get(1), is(instanceOf(User.class)));

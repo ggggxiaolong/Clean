@@ -6,6 +6,7 @@ import com.example.mrtan.domain.executor.ThreadExecutor;
 import com.example.mrtan.domain.repository.UserRepository;
 import io.reactivex.Observable;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  * @author mrtan 17-3-12
@@ -14,7 +15,7 @@ import java.util.List;
 public class GetUserList extends UserCase<List<User>, Void> {
   final UserRepository mUserRepository;
 
-  public GetUserList(ThreadExecutor threadExecutor, PostExecutorThread postExecutorThread,
+  @Inject public GetUserList(ThreadExecutor threadExecutor, PostExecutorThread postExecutorThread,
       UserRepository userRepository) {
     super(threadExecutor, postExecutorThread);
     mUserRepository = userRepository;

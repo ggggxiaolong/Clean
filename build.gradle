@@ -5,7 +5,7 @@ buildscript {
         maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.1'
     }
 }
 
@@ -15,6 +15,6 @@ allprojects {
         androidVersionCode = 1
         androidVersionName = '1.0'
         testInstrumentationRunner = 'android.support.test.runner.AndroidJUnitRunner'
-        testApplicationId = 'com.example.mrtan.clean.test'
+        testApplicationId = 'com.example.mrtan.clean.app.test'
     }
 }

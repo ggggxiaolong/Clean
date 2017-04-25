@@ -36,7 +36,11 @@ import static org.mockito.Mockito.verifyZeroInteractions;
   }
 
   @Test public void testGetUserDetailUseCaseObservable(){
-    mGetUserDetails.buildUserCaseObservable(ImmutableParams.of(USER_ID));
+    mGetUserDetails.buildUserCaseObservable(new GetUserDetails.Params() {
+      @Override public int userId() {
+        return USER_ID;
+      }
+    });
 
     verify(mockUserRepository).user(USER_ID);
     verifyNoMoreInteractions(mockUserRepository);
