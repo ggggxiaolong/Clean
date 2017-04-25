@@ -5,7 +5,7 @@ import android.widget.Toast;
 import com.example.mrtan.app.internal.di.HasComponent;
 
 /**
- * Created by mrtan on 17-4-21.
+ * @author mrtan on 17-4-21.
  */
 
 public abstract class BaseFragment extends Fragment {

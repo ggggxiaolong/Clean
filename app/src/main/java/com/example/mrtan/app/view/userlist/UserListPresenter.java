@@ -23,23 +23,24 @@ public class UserListPresenter extends BasePresenter<UserListView> {
   void load(){
     mView.hideRetry();
     mView.showLoading();
-    DisposableObserver<List<User>> observer = new DisposableObserver<List<User>>() {
-      @Override public void onNext(List<User> users) {
-        mView.renderUserList(UserModelDataMapper.transform(users));
-      }
-
-      @Override public void onError(Throwable e) {
-        mView.hideLoading();
-        mView.showRetry();
-        mView.showError(ErrorMessageFactory.create((Exception) e));
-      }
-
-      @Override public void onComplete() {
-        mView.hideLoading();
-      }
-    };
-    mGetUserList.execute(observer, null);
+    mGetUserList.execute(mObserver, null);
   }
+
+  final DisposableObserver<List<User>> mObserver = new DisposableObserver<List<User>>() {
+    @Override public void onNext(List<User> users) {
+      mView.renderUserList(UserModelDataMapper.transform(users));
+    }
+
+    @Override public void onError(Throwable e) {
+      mView.hideLoading();
+      mView.showRetry();
+      mView.showError(ErrorMessageFactory.create((Exception) e));
+    }
+
+    @Override public void onComplete() {
+      mView.hideLoading();
+    }
+  };
 
   @Override public void onDetach() {
     mGetUserList.dispose();

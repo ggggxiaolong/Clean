@@ -64,7 +64,7 @@ public class UserListFragment extends BaseFragment implements UserListView {
 
   @Override public void showRetry() {
     if (mRetry == null) {
-      ViewStub viewStub = (ViewStub) getView().findViewById(R.id.bt_retry);
+      ViewStub viewStub = (ViewStub) getView().findViewById(R.id.stub_retry);
       mRetry = viewStub.inflate();
     }
     if (mRetry.getVisibility() != View.VISIBLE) mRetry.setVisibility(View.VISIBLE);

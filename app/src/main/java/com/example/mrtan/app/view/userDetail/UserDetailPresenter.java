@@ -27,6 +27,7 @@ public class UserDetailPresenter extends BasePresenter<UserDetailView> {
   }
 
   void load() {
+    mView.hideRetry();
     mView.showLoading();
     mUserDetails.execute(mUserObserver, () -> mUserId);
   }
@@ -37,7 +38,6 @@ public class UserDetailPresenter extends BasePresenter<UserDetailView> {
     }
 
     @Override public void onNext(User user) {
-      mView.hideRetry();
       mView.hideLoading();
       mView.showUser(UserModelDataMapper.transform(user));
     }

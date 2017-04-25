@@ -59,6 +59,7 @@ android {
     debug {
       signingConfig signingConfigs.debug
     }
+    release{}
   }
 }
 
@@ -67,12 +68,13 @@ dependencies {
   def presentationTestDependencies = rootProject.ext.presentationTestDependencies
   def developmentDependencies = rootProject.ext.developmentDependencies
 
-  compile project(path: ':data')
+  compile project(':data')
   compile project(':domain')
 
   annotationProcessor presentationDependencies.daggerCompiler
   annotationProcessor presentationDependencies.butterKnifeCompiler
 
+  compile presentationDependencies.supportV4
   compile presentationDependencies.dagger
   compile presentationDependencies.butterKnife
   compile presentationDependencies.recycleView
@@ -82,15 +84,10 @@ dependencies {
   compile presentationDependencies.stream
   compile presentationDependencies.glide
 
-  compile 'com.android.support:appcompat-v7:25.2.0'
-  compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-
-  androidTestCompile presentationTestDependencies.mockito
-  androidTestCompile presentationTestDependencies.dexmaker
-  androidTestCompile presentationTestDependencies.dexmakerMockito
-  androidTestCompile presentationTestDependencies.espresso
-  androidTestCompile presentationTestDependencies.testingSupportLib
-
+  testCompile presentationTestDependencies.junit
+  testCompile presentationTestDependencies.mockito
+  testCompile presentationTestDependencies.robolectric
+  testCompile presentationTestDependencies.assertj
   //development
   compile developmentDependencies.leakCanary
 }

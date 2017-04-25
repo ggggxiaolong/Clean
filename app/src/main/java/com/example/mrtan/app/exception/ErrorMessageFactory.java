@@ -1,10 +1,9 @@
 package com.example.mrtan.app.exception;
 
-import android.content.Context;
 import com.example.mrtan.app.R;
 import com.example.mrtan.app.util.Utils;
-import com.example.mrtan.data.exception.UserNotFoundException;
 import com.example.mrtan.data.exception.NetworkConnectionException;
+import com.example.mrtan.data.exception.UserNotFoundException;
 
 /**
  * @author mrtan 17-3-18
