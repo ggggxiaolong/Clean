@@ -4,23 +4,21 @@ buildscript {
   }
   dependencies {
     classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
-    classpath 'me.tatarka:gradle-retrolambda:3.2.3'
   }
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
   def globalConfiguration = rootProject.extensions.getByName("ext")
 
-  compileSdkVersion globalConfiguration.androidCompileSdkVersion
-  buildToolsVersion globalConfiguration.androidBuildToolsVersion
+  compileSdkVersion globalConfiguration.compileSdkVersion
+  buildToolsVersion globalConfiguration.buildToolsVersion
 
   defaultConfig {
-    minSdkVersion globalConfiguration.androidMinSdkVersion
-    targetSdkVersion globalConfiguration.androidTargetSdkVersion
+    minSdkVersion globalConfiguration.minSdkVersion
+    targetSdkVersion globalConfiguration.targetSdkVersion
 
     applicationId globalConfiguration.androidApplicationId
     versionCode globalConfiguration.androidVersionCode
@@ -64,30 +62,36 @@ android {
 }
 
 dependencies {
-  def presentationDependencies = rootProject.ext.presentationDependencies
-  def presentationTestDependencies = rootProject.ext.presentationTestDependencies
-  def developmentDependencies = rootProject.ext.developmentDependencies
+  def presentationDependencies = rootProject.ext.appDependencies
+  def presentationTestDependencies = rootProject.ext.appDependencies
+  def developmentDependencies = rootProject.ext.appDependencies
 
-  compile project(':data')
-  compile project(':domain')
+  implementation project(':data')
+  implementation project(':domain')
 
   annotationProcessor presentationDependencies.daggerCompiler
   annotationProcessor presentationDependencies.butterKnifeCompiler
+  annotationProcessor presentationDependencies.immutables
+  androidTestAnnotationProcessor presentationDependencies.immutables
+  testAnnotationProcessor presentationDependencies.immutables
 
-  compile presentationDependencies.supportV4
-  compile presentationDependencies.dagger
-  compile presentationDependencies.butterKnife
-  compile presentationDependencies.recycleView
-  compile presentationDependencies.rxJava
-  compile presentationDependencies.rxAndroid
-  compile presentationDependencies.arrow
-  compile presentationDependencies.stream
-  compile presentationDependencies.glide
+  implementation presentationDependencies.support
+  implementation presentationDependencies.dagger
+  implementation presentationDependencies.butterKnife
+  implementation presentationDependencies.recyclerView
+  implementation presentationDependencies.rxJava
+  implementation presentationDependencies.rxAndroid
+  implementation presentationDependencies.arrow
+  implementation presentationDependencies.stream
+  implementation presentationDependencies.glide
+  implementation presentationDependencies.okhttp
+  implementation presentationDependencies.gson
+  implementation presentationDependencies.immutables
 
-  testCompile presentationTestDependencies.junit
-  testCompile presentationTestDependencies.mockito
-  testCompile presentationTestDependencies.robolectric
-  testCompile presentationTestDependencies.assertj
+  testImplementation presentationTestDependencies.junit
+  testImplementation presentationTestDependencies.mockito
+  testImplementation presentationTestDependencies.robolectric
+  testImplementation presentationTestDependencies.assertj
   //development
-  compile developmentDependencies.leakCanary
+  implementation developmentDependencies.leakCanary
 }
