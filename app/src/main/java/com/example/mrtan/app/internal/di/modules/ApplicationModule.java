@@ -3,8 +3,6 @@ package com.example.mrtan.app.internal.di.modules;
 import android.app.Application;
 import android.content.Context;
 import com.example.mrtan.app.UIThread;
-import com.example.mrtan.data.cache.UserCache;
-import com.example.mrtan.data.cache.UserCacheImpl;
 import com.example.mrtan.data.executor.JobExecutor;
 import com.example.mrtan.data.repository.UserDataRepository;
 import com.example.mrtan.domain.executor.PostExecutorThread;

@@ -3,9 +3,10 @@ apply from: 'buildsystem/dependencies.gradle'
 buildscript {
     repositories {
         maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url "https://dl.google.com/dl/android/maven2" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha4'
     }
 }
 
@@ -16,5 +17,9 @@ allprojects {
         androidVersionName = '1.0'
         testInstrumentationRunner = 'android.support.test.runner.AndroidJUnitRunner'
         testApplicationId = 'com.example.mrtan.clean.app.test'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven {   url "${System.env.HOME}/.m2/repository" }
     }
 }

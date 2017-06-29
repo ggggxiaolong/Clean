@@ -13,16 +13,16 @@ sourceSets {
 }
 
 dependencies {
-    def domainDependencies = rootProject.ext.domainDependencies
-    def domainTestDependencies = rootProject.ext.domainTestDependencies
+    def domainDependencies = rootProject.ext.appDependencies
+    def domainTestDependencies = rootProject.ext.appDependencies
 
-    compile domainDependencies.javaxInject
-    compile domainDependencies.rxJava
-    compile domainDependencies.arrow
-    compile domainDependencies.immutables
+    implementation domainDependencies.javaxInject
+    implementation domainDependencies.rxJava
+    implementation domainDependencies.arrow
+    implementation domainDependencies.immutables
 
-    testCompile domainTestDependencies.junit
-    testCompile domainTestDependencies.mockito
-    testCompile domainTestDependencies.assertj
+    testImplementation domainTestDependencies.junit
+    testImplementation domainTestDependencies.mockito
+    testImplementation domainTestDependencies.assertj
 }
 
